@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+.holder {
+    width: 70vw;
+    margin: auto;
+}
+
 .form-select, .form-control {
     width: 30%;
     display: inline;
@@ -16,7 +21,7 @@ h3 {
 
 section {
     border-top: 1px solid black;
-    margin-top: 2%;
+    margin-top: 4% !important; 
 }
 
 .row {
@@ -29,6 +34,7 @@ section {
 
 label {
     display: block;
+    padding: 0 !important;
 }
 
 .btn-danger {
