@@ -9,7 +9,9 @@
     <!-- estilos -->
     <link rel="stylesheet" href="estilos.css">
     <!-- js -->
-    <link rel="stylesheet" href="index.js">
+    <script src="cotizador.js"></script>
+    <script src="variables.js"></script>
+    <script defer src="index.js"></script>
     <title>Cotizador</title>
 </head>
 <body>
@@ -20,63 +22,33 @@
             <h2>Datos del vehiculo</h2>
             <div class="row">
                 <label for="">Año</label>
-                <select class="form-select" id="selectorDeAño" aria-label="">
-                    <option value="1">0km</option>
-                    <option value="2">2023 - 2018</option>
-                    <option value="3">2017 - 2012</option>
-                    <option value="4">2011 - 2006</option>
-                    <option value="5">2005 - 2000</option>
-                    <option value="6">anterior al 2000</option>
+                <select class="form-select" id="selectorDeAño">
+                    <option selected disabled>Selecciona el año</option>
                 </select>
             </div>
             <div class="row">
                 <div class="col">
                     <label for="">Marca</label>
                     <select class="form-select" id="selectorDeMarca" aria-label="">
-                        <option value="1">Reanult</option>
-                        <option value="2">Ford</option>
-                        <option value="3">Fiat</option>
-                        <option value="4">Chevrolet</option>
-                        <option value="5">Volkswagen</option>
-                        <option value="6">Peugeot</option>
-                        <option value="7">Auto aleman alta gama</option>
+                        <option selected disabled>Selecciona la marca</option>
                     </select>
                 </div>
                 <div class="col">
                     <label for="">Gama</label>
                     <select class="form-select" id="selectorDeGama" aria-label="">
-                        <option value="1">Segmento A - Base</option>
-                        <option value="2">Segmento B - Media</option>
-                        <option value="3">Segmento C - Alta</option>
-                        <option value="4">Segmento D - Familiar</option>
-                        <option value="5">Segmento E - Ejecutivo/deportivo</option>
-                        <option value="6">Segmento F - 4x4</option>
+                        <option selected disabled>Selecciona la gama</option>
                     </select>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <label for="">Tiene GNC?</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                        Si
-                        </label>
+                    <div class="form-check" id="gnc">
                     </div>
                 </div>
                 <div class="col">
-                    <label for="">Es de uso particular?</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                        Si
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                        No 
-                        </label>
+                    <label for="">Es de uso comercial?</label>
+                    <div class="form-check" id="comercial">
                     </div>
                 </div>
             </div>
@@ -90,7 +62,7 @@
             <div class="row">
                 <div class="col">
                     <label for="">Direccion</label>
-                    <input class="form-control form-control-sm type="text" placeholder="" aria-label=".form-control-lg">
+                    <input class="form-control form-control-sm" type="text" placeholder="" aria-label=".form-control-lg">
                 </div>
                 <div class="col">
                     <label for="">Localidad</label>
@@ -106,7 +78,7 @@
                 <input class="form-control form-control-sm" type="text" placeholder="Codigo de area + nro sin 15, Ej. 1123451234" aria-label=".form-control-lg">
             </div>
         </section>
-        <button type="button" class="btn btn-danger">Ver cotización</button>
+        <button type="button" class="btn btn-danger" id="verCotizacion">Ver cotización</button>
     </main>
     <footer>
         <p>cotizador de autos</p>

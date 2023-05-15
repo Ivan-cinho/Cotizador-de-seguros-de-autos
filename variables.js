@@ -1,29 +1,35 @@
 
-const añoDelAuto = [{año: "0km", factor: 1.23},
-                    {año: "2023 - 2018", factor: 1.17},
-                    {año: "2017 - 2012", factor: 1.12},
-                    {año: "2011 - 2006", factor: 1.07},
-                    {año: "2005 - 2000", factor: 1.02},
-                    {año: "anterior al 2000", factor: 1}  
+const añoDelAuto = [{tipo: "0km", factor: 1.23},
+                    {tipo: "2023 - 2018", factor: 1.17},
+                    {tipo: "2017 - 2012", factor: 1.12},
+                    {tipo: "2011 - 2006", factor: 1.07},
+                    {tipo: "2005 - 2000", factor: 1.02},
+                    {tipo: "anterior al 2000", factor: 1}  
 ]
 
-const marcaDelAuto = [  {marca: "Reanult", factor: 1},
-                        {marca: "Ford", factor: 1},
-                        {marca: "Fiat", factor: 1},
-                        {marca: "Chevrolet", factor: 1},
-                        {marca: "Volkswagen", factor: 1},
-                        {marca: "Peugeot", factor: 1.1},
-                        {marca: "Auto aleman alta gama", factor: 1.2}
+const marcaDelAuto = [  {tipo: "Reanult", factor: 1},
+                        {tipo: "Ford", factor: 1},
+                        {tipo: "Fiat", factor: 1},
+                        {tipo: "Chevrolet", factor: 1},
+                        {tipo: "Volkswagen", factor: 1},
+                        {tipo: "Peugeot", factor: 1.1},
+                        {tipo: "Auto aleman alta gama", factor: 1.2}
 
 ]
 
-const gamaDelModelo = [ {gama: "Segmento A - Base", factor: 1},
-                        {gama: "Segmento B - Media", factor: 1.4},
-                        {gama: "Segmento C - Alta", factor: 1.9},
-                        {gama: "Segmento D - Familiar", factor: 1.9}, 
-                        {gama: "Segmento E - Ejecutivo/deportivo", factor: 1.2}, 
-                        {gama: "Segmento F - 4x4", factor: 1.2}
+const gamaDelModelo = [ {tipo: "Segmento A - Base", factor: 1},
+                        {tipo: "Segmento B - Media", factor: 1.4},
+                        {tipo: "Segmento C - Alta", factor: 1.9},
+                        {tipo: "Segmento D - Familiar", factor: 1.9}, 
+                        {tipo: "Segmento E - Ejecutivo/deportivo", factor: 1.2}, 
+                        {tipo: "Segmento F - 4x4", factor: 1.2}
 
 ]
+
+const selectorGnc = 1.02
+
+const usoParticularSi = 1
+
+const usoParticularNo = 1.1
 
 const costoBase = 4500
