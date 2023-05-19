@@ -16,31 +16,43 @@ cargarSelect(selectorDeAño, añoDelAuto)
 cargarSelect(selectorDeMarca, marcaDelAuto)
 cargarSelect(selectorDeGama, gamaDelModelo)
 
-// todavia no lo vincula al value
 function cargarCheckGnc() {
-                Gnc.innerHTML = `<input class="form-check-input" type="checkbox" value="${selectorGnc}">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                    Si
-                                </label>`
+                Gnc.innerHTML = `<input class="form-check-input" id="inputGnc" type="checkbox">`
 }
 cargarCheckGnc()
-
-function cargarCheckUso() {
-                            usoComercial.innerHTML =    `<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="usoParticularSi">
-                                                        <label class="form-check-label" for="flexRadioDefault1">
-                                                            Si
-                                                        </label>`
+function valorGnc() {
+    if (document.querySelector("#inputGnc").checked) {
+        return gncSi
+    } else {
+        return 1
+    }
 }
-cargarCheckUso()
+
+function cargarCheckComercial() {
+                            usoComercial.innerHTML = `<input class="form-check-input" id="inputComercial" type="checkbox" name="flexRadioDefault">`
+}
+cargarCheckComercial()
+function valorComercial() {
+    if (document.querySelector("#inputComercial").checked) {
+        return comercialSi
+    } else {
+        return 1
+    }
+}
 
 function validarDatosCompletos() {
     return (selectorDeAño.value !== "Selecciona el año" && selectorDeMarca.value !== "Selecciona la marca" && selectorDeGama.value !== "Selecciona la gama")
 }
 
-function realizarCotizacio() {
+function realizarCotizacion() {
     if (validarDatosCompletos()) {
-        const cotizo = Cotizador(costoBase, selectorDeAño.value, selectorDeMarca.value, selectorDeGama.value, Gnc.value)
+        const cotizo = new Cotizador(costoBase, selectorDeAño.value, selectorDeMarca.value, selectorDeGama.value, valorGnc(), valorComercial())
+        alert("El valor de la cuota de tu seguro es de $" + parseInt(cotizo.cotizar()))
     } else {
         alert("completa todo che!")
     }
 }
+
+btnCotizacion.addEventListener("click", ()=> {
+    realizarCotizacion()
+})

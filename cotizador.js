@@ -1,15 +1,14 @@
 
 class Cotizador {
-    constructor(costoBase, factorAño, factorMarca, factorGama, factorGnc, factorUso ) {
+    constructor(costoBase, factorAño, factorMarca, factorGama, factorGnc, factorComercial) {
         this.costoBase = parseFloat(costoBase)
         this.factorAño = parseFloat(factorAño)
         this.factorMarca = parseFloat(factorMarca)
         this.factorGama = parseFloat(factorGama)
         this.factorGnc = parseFloat(factorGnc)
-        this.factorUso = parseFloat(factorUso)
+        this.factorComercial = parseFloat(factorComercial)
     }
     cotizar() {
-        let resultado = (this.costoBase * this.factorAño * this.factorMarca * this.factorGama * this.factorGnc * this.factorUso).toFixed(2)
-        return resultado
+        return (this.costoBase * this.factorAño * this.factorMarca * this.factorGama * this.factorGnc * this.factorComercial).toFixed(2)
     }
 }

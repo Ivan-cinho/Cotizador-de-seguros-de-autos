@@ -10,6 +10,11 @@
     margin: auto;
 }
 
+h1 {
+    width: 70%;
+    margin: auto;
+}
+
 .form-select, .form-control {
     width: 30%;
     display: inline;
@@ -21,7 +26,7 @@ h3 {
 
 section {
     border-top: 1px solid black;
-    margin-top: 4% !important; 
+    margin-top: 1% !important; 
 }
 
 .row {
@@ -40,4 +45,92 @@ label {
 .btn-danger {
     display: block;
     margin: auto;
+}
+
+/* header */
+
+.logo {
+    width: 15%;
+    position: absolute;
+    top: 20%;
+    right: 15%;
+}
+.banner {
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+
+.container-fluid {
+    padding: 0 !important;
+}
+
+.contenedor-banner {
+    position: relative;
+}
+
+.contenedor-h2 {
+    position: absolute;
+    width: 28vw;
+    top: 12%;
+    left: 7%;
+}
+
+.contenedor-h2 h2 {
+    font-size: 4.5vw;
+    color: white;
+    font-weight: 700;
+}
+
+.contenedor-banner h1{
+    display: none;
+}
+
+
+/* datos-de-pago */
+.datos-de-pago {
+    background-color: #f3f3f5;
+}
+
+.contenedor-datos-de-pago {
+    margin: auto;
+    padding: 2% 0% 2% 0%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.contenedor-datos-de-pago p{
+    display: inline;
+}
+
+.contenedor-datos-de-pago a {
+    color: #848484;
+    text-decoration: none;
+}
+
+.contenedor-datos-de-pago-1 {
+    display: inline;
+}
+
+/* otros datos */
+
+.otros-datos {
+    background-color: #848484;
+    border-top: none;
+}
+
+.contenedor-otros-datos {
+    display: flex;
+    justify-content: space-around;
+    padding: 2% 0 2% 0;
+}
+
+.contenedor-otros-datos img {
+    width: 8vw;
+}
+
+.contenedor-otros-datos p {
+    color: white;
+    font-size: 1vw;
+    width: 60%;
 }

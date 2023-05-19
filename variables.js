@@ -18,18 +18,16 @@ const marcaDelAuto = [  {tipo: "Reanult", factor: 1},
 ]
 
 const gamaDelModelo = [ {tipo: "Segmento A - Base", factor: 1},
-                        {tipo: "Segmento B - Media", factor: 1.4},
-                        {tipo: "Segmento C - Alta", factor: 1.9},
-                        {tipo: "Segmento D - Familiar", factor: 1.9}, 
+                        {tipo: "Segmento B - Media", factor: 1.04},
+                        {tipo: "Segmento C - Alta", factor: 1.09},
+                        {tipo: "Segmento D - Familiar", factor: 1.09}, 
                         {tipo: "Segmento E - Ejecutivo/deportivo", factor: 1.2}, 
                         {tipo: "Segmento F - 4x4", factor: 1.2}
 
 ]
 
-const selectorGnc = 1.02
+const gncSi = 1.1
 
-const usoParticularSi = 1
+const comercialSi = 1.1
 
-const usoParticularNo = 1.1
-
-const costoBase = 4500
+const costoBase = 6500
