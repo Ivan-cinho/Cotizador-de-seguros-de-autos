@@ -16,7 +16,7 @@ h1 {
 }
 
 .form-select, .form-control {
-    width: 30%;
+    width: 30vw;
     display: inline;
 }
 
@@ -48,6 +48,10 @@ label {
 }
 
 /* header */
+
+header {
+    margin-bottom: 3%;
+}
 
 .logo {
     width: 15%;
