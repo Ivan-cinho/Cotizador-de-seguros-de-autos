@@ -30,4 +30,4 @@ const gncSi = 1.1
 
 const comercialSi = 1.1
 
-const costoBase = 6500
+const costoBase = 12000
