@@ -64,7 +64,7 @@ label {
 
 .btn-wsp:hover {
     text-decoration: none;
-    color: #0df053;
+    color: #0df053 !important;
     background-color: white;
 }
 
@@ -167,21 +167,43 @@ header {
 
 /* footer */
 
+footer {
+    background-color: #848484;
+}
+
 footer section{
-    margin-top: 3%  !important;
     border-top: none;
     display: flex;
     justify-content: space-between;
 }
 
 footer section div {
-    border-top: 1px solid black;
+    border-top: 1px solid white;
 }
 
-footer section div p {
+footer section div p, span, .fa-phone {
     display: inline;
+    color: white;
 }
 
 .btn-social {
-    width: 8%;
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+}
+
+section div {
+    margin-top: 2%;
+    padding-top: 1%;
+}
+
+div a i {
+    font-size: x-large;
+    position: absolute;
+    top: 17%;
+    right: 19%;
+    color: #848484;
 }
