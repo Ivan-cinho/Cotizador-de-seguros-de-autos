@@ -29,7 +29,7 @@ section {
 }
 
 .row {
-    margin: 3% 0%;
+    margin: 1% 0%;
 }
 
 .col {
@@ -49,7 +49,6 @@ label {
 .btn-wsp {
     position: fixed;
     width: 55px;
-    /* height: 55px; */
     line-height: 55px;
     bottom: 5%;
     right: 5%;
@@ -117,6 +116,27 @@ header {
     margin-bottom: 1%;
 }
 
+.form-check, .form-check-p{
+    display: inline;
+}
+
+.form-check .form-check-input {
+    float: none;
+    border-radius: 0;
+}
+
+.formQuieroQueMeContacten {
+    display: block;
+    margin: 4% auto;
+}
+
+.textAreaQuieroQueMeContacten {
+    display: block;
+    margin: 1% auto;
+    resize: none;
+    width: 70%;
+}
+
 /* datos-de-pago */
 .datos-de-pago {
     background-color: #f3f3f5;
@@ -134,12 +154,45 @@ header {
 }
 
 .contenedor-datos-de-pago a {
-    color: #848484;
+    color: #848484 !important;
     text-decoration: none;
+}
+
+.contenedor-datos-de-pago a:hover {
+    color: rgb(229, 72, 72) !important;
+    cursor: pointer;
 }
 
 .contenedor-datos-de-pago-1 {
     display: inline;
+}
+
+.tarjeta {
+    width: 9%;
+    margin: 2%;
+}
+
+.pagoMisCuentas {
+    width: 16%;
+}
+
+.rapipago {
+    width: 14%;
+}
+
+.naranja {
+    width: 12%;
+}
+
+.hr1 {
+    width: 75%;
+    margin: auto;
+    margin-top: 3%;
+    margin-bottom: 1%;
+}
+
+.tituloSitioSeguro {
+    color: rgb(229, 72, 72);
 }
 
 /* otros datos */
@@ -196,7 +249,7 @@ footer section div p, span, .fa-phone {
 }
 
 section div {
-    margin-top: 2%;
+    margin: 3% 0 3% 0;
     padding-top: 1%;
 }
 
