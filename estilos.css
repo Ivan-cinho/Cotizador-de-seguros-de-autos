@@ -1,4 +1,5 @@
 /* globales */
+
 * {
     margin: 0;
     padding: 0;
@@ -135,6 +136,10 @@ header {
     margin: 1% auto;
     resize: none;
     width: 70%;
+}
+
+#contacto, #medios {
+    margin: 2% auto;
 }
 
 /* datos-de-pago */

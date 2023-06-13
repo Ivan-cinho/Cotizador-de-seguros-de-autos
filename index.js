@@ -20,6 +20,7 @@ function cargarCheckGnc() {
                 Gnc.innerHTML = `<input class="form-check-input" id="inputGnc" type="checkbox">`
 }
 cargarCheckGnc()
+
 function valorGnc() {
     if (document.querySelector("#inputGnc").checked) {
         return gncSi
@@ -32,6 +33,7 @@ function cargarCheckComercial() {
                             usoComercial.innerHTML = `<input class="form-check-input" id="inputComercial" type="checkbox" name="flexRadioDefault">`
 }
 cargarCheckComercial()
+
 function valorComercial() {
     if (document.querySelector("#inputComercial").checked) {
         return comercialSi
@@ -44,7 +46,6 @@ function validarDatosCompletos() {
     return (selectorDeAño.value !== "Selecciona el año" && selectorDeMarca.value !== "Selecciona la marca" && selectorDeGama.value !== "Selecciona la gama")
 }
 
-
 function realizarCotizacion() {
     if (validarDatosCompletos()) {
         const cotizo = new Cotizador(costoBase, selectorDeAño.value, selectorDeMarca.value, selectorDeGama.value, valorGnc(), valorComercial())
@@ -53,29 +54,26 @@ function realizarCotizacion() {
             backdrop: 'true',
             title: 'El valor estimado de la cuota de tu seguro es de $' + parseInt(cotizo.cotizar()),
             imageUrl: 'imagenes/lacaja.svg',
-            imageWidth: '7%',
+            imageWidth: '10%',
+            showConfirmButton: false,
             imageAlt: 'La caja',
-            showCancelButton: true,
-            confirmButtonText: 'Medios de pago',
-            cancelButtonText: 'Quiero que me contacten',
-            // html: '<button class="btn btn-danger">Enviar cotizacion por mail</button><button class="btn btn-danger">medios de pago</button>'
-        }) .then((r) => {
-            if (r.isConfirmed) {
-                mostrarMediosDePago()
-            } else {
-                quieroQueMeContacten()
-            }
-        }) 
-    } else {
-        llenarDatos()
+            html: '<button class="btn btn-danger" id="contacto">Quiero que me contacten</button>'+
+                  '<button class="btn btn-danger" id="medios">medios de pago</button>'
+        })
+        const mediosDePago = document.getElementById("medios")
+        mediosDePago.addEventListener ("click", () => {
+            mostrarMediosDePago()
+        })
+        const queMeContacten = document.getElementById("contacto")
+        queMeContacten.addEventListener ("click", () => {
+            quieroQueMeContacten()
+        })
     }
 }
-
 
 btnCotizacion.addEventListener("click", ()=> {
     realizarCotizacion()
 })
-
 
 const llenarDatos = () => {
     swal.fire({
@@ -90,7 +88,7 @@ const quieroQueMeContacten = () => {
     Swal.fire ({
         width: '50%',
         imageUrl: 'imagenes/lacaja.svg',
-        imageWidth: '7%',
+        imageWidth: '10%',
         confirmButtonText: 'Enviar',
         title: 'Ingrese sus datos y sera contactado a la brevedad',
         html:   '<input class="form-control form-control-sm formQuieroQueMeContacten" type="text" placeholder="Nombre y apellido" aria-label=".form-control-lg">'+
@@ -110,7 +108,7 @@ const mostrarMediosDePago = () => {
         width: '50%',
         backdrop: 'true',
         imageUrl: 'imagenes/lacaja.svg',
-        imageWidth: '7%',
+        imageWidth: '10%',
         imageAlt: 'La caja',
         showConfirmButton: false,
         html: '<hr class="hr1">'+
