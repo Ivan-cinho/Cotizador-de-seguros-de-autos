@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="estilos.css">
     <!-- favi -->
     <link rel="icon" href="imagenes/LA-CAJA-LOGO.jpg">
+    <!-- emailjs -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">emailjs.init('RIn-AVvOBIAPgoinI')</script>
     <!-- js -->
     <script src="cotizador.js"></script>
     <script src="variables.js"></script>
@@ -70,32 +73,32 @@
             </div>
             <button type="button" class="btn btn-danger" id="verCotizacion">Ver cotización</button>
         </section>
-        <section class="datos-personales holder">
+        <form class="datos-personales holder" id="form">
             <h2>Datos personales</h2>
-            <div class="row">
-                <label for="">Nombre y apellido</label>
-                <input class="form-control form-control-sm" type="text" placeholder="" aria-label=".form-control-lg">
+            <div class="row field">
+                <label for="from_name">Nombre y apellido</label>
+                <input class="form-control form-control-sm campoDeFormularioNombre" type="text" name="from_name" id="from_name" aria-label=".form-control-lg">
             </div>
             <div class="row">
-                <div class="col">
-                    <label for="">Direccion</label>
-                    <input class="form-control form-control-sm" type="text" placeholder="" aria-label=".form-control-lg">
+                <div class="col field">
+                    <label for="message">Direccion</label>
+                    <input class="form-control form-control-sm campoDeFormulariodireccion" type="text" name="message" id="message" aria-label=".form-control-lg">
                 </div>
-                <div class="col">
-                    <label for="">Localidad</label>
-                    <input class="form-control form-control-sm" type="text" placeholder="" aria-label=".form-control-lg">
+                <div class="col field">
+                    <label for="message">Localidad</label>
+                    <input class="form-control form-control-sm campoDeFormulariolocalidad" type="text" name="message" id="message" aria-label=".form-control-lg">
                 </div>
             </div>
-            <div class="row">
-                <label for="">Correo electronico</label>
-                <input class="form-control form-control-sm" type="text" placeholder="" aria-label=".form-control-lg">
+            <div class="row field">
+                <label for="email_id">Correo electronico</label>
+                <input class="form-control form-control-sm campoDeFormulariocorreoElectronico" type="text" name="email_id" id="email_id" aria-label=".form-control-lg">
             </div>
-            <div class="row">
-                <label for="">Telefono</label>
-                <input class="form-control form-control-sm" type="text" placeholder="Codigo de area + nro sin 15, Ej. 1123451234" aria-label=".form-control-lg">
+            <div class="row field">
+                <label for="message">Telefono</label>
+                <input class="form-control form-control-sm campoDeFormulariotelefono" type="text" placeholder="Codigo de area + nro sin 15, Ej. 1123451234" name="message" id="message" aria-label=".form-control-lg">
             </div>
-            <button type="button" class="btn btn-danger" id="eviarCotizacion">Solicitar cotizacion detallada</button>
-        </section>
+            <input type="submit" class="btn btn-danger" id="eviarCotizacion" value="Quiero que me contacten"></input>
+        </form>
         <section class="datos-de-pago">
             <div class="contenedor-datos-de-pago holder">
                 <div class="contenedor-datos-de-pago-1">

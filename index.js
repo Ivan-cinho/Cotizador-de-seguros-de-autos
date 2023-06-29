@@ -68,6 +68,8 @@ function realizarCotizacion() {
         queMeContacten.addEventListener ("click", () => {
             quieroQueMeContacten()
         })
+    } else {
+        llenarDatos()
     }
 }
 
@@ -79,23 +81,44 @@ const llenarDatos = () => {
     swal.fire({
         icon: 'error',
         width: '70%',
+        showConfirmButton: false,
         backdrop: 'true',
         title: 'Completar los datos para realizar la cotizacion'
     })
 }
 
+// quiero que me contacten email js
+
+function vaidarEnviarConsulta() {
+    return (campoNombre.value !== "" &&  campoCorreo.value !== "" && campoTexto.value !== "")
+}
+
 const quieroQueMeContacten = () => {
+
     Swal.fire ({
         width: '50%',
         imageUrl: 'imagenes/lacaja.svg',
         imageWidth: '10%',
-        confirmButtonText: 'Enviar',
+        showConfirmButton: false,
         title: 'Ingrese sus datos y sera contactado a la brevedad',
-        html:   '<input class="form-control form-control-sm formQuieroQueMeContacten" type="text" placeholder="Nombre y apellido" aria-label=".form-control-lg">'+
-                '<input class="form-control form-control-sm formQuieroQueMeContacten" type="text" placeholder="Correo electronico" aria-label=".form-control-lg">'+
-                '<textarea name="" class="form-control textAreaQuieroQueMeContacten" cols="20" rows="10" placeholder="Escriba su inquietud"></textarea>'
+        html:   '<input class="form-control form-control-sm formQuieroQueMeContacten" id="campoNombre" type="text" placeholder="Nombre y apellido" aria-label=".form-control-lg">'+
+                '<input class="form-control form-control-sm formQuieroQueMeContacten" id="campoCorreo" type="text" placeholder="Correo electronico" aria-label=".form-control-lg">'+
+                '<textarea name="" class="form-control textAreaQuieroQueMeContacten" id="campoTexto" cols="20" rows="10" placeholder="Escriba su inquietud"></textarea>'+
+                '<button class="btn btn-danger" id="enviar">Enviar</button>'
+    })
+    const campoNombre = document.getElementById("campoNombre");
+    const campoCorreo = document.getElementById("campoCorreo");
+    const campoTexto = document.getElementById("campoTexto");
+    const enviar = document.getElementById("enviar");
+    enviar.addEventListener ("click", ()=> {
+        if (vaidarEnviarConsulta()) {
+            envioExitoso()
+        } else {
+            llenarLosDatos()
+        }
     })
 }
+
 
 // medios de pago y seguridad
 
@@ -143,3 +166,60 @@ btnMediosDePago.addEventListener("click", ()=> {
 btnSitioSeguro.addEventListener("click", ()=> {
     mostrarSitioSeguro()
 })
+
+
+// email js
+
+const campoDeFormularioNombre = document.querySelector(".campoDeFormularioNombre");
+const campoDeFormulariocorreoElectronico = document.querySelector(".campoDeFormulariocorreoElectronico");
+
+
+const envioExitoso = () => {
+    swal.fire ({
+        width: '70%',
+        backdrop: 'true',
+        title: 'Ya recibimos su consulta y sera contactado a la brevedad',
+        imageUrl: 'imagenes/lacaja.svg',
+        imageWidth: '10%',
+        showConfirmButton: false,
+        imageAlt: 'La caja'
+    })
+}
+
+const llenarLosDatos = () => {
+    swal.fire ({
+        title: 'Debe llenar los campos requeridos',
+        icon: 'error',
+        width: '70%',
+        showConfirmButton: false,
+        backdrop: 'true'
+    })
+}
+
+function validarQuieroQueMeContacten() {
+    return (campoDeFormularioNombre.value !== ""&& campoDeFormulariocorreoElectronico.value !== "")
+}
+
+const btn = document.getElementById('eviarCotizacion');
+
+document.getElementById('form')
+.addEventListener('submit', function(event) {
+    event.preventDefault();
+    if (validarQuieroQueMeContacten()) {
+        btn.value = 'enviando...';
+
+        const serviceID = 'default_service';
+        const templateID = 'template_uaqwn6g';
+    
+            emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+                btn.value = 'Quiero que me contacten';
+                envioExitoso();
+            }, (err) => {
+                btn.value = 'Quiero que me contacten';
+                alert(JSON.stringify(err));
+            });
+    } else {
+        llenarLosDatos()
+    }
+});
